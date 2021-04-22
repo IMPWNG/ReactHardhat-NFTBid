@@ -1,7 +1,7 @@
 import "./Dapp.css";
 import styled from "styled-components";
 import { BunnyCard } from "./components/bunnyCard";
-import { ConnectWallet } from "./components/ConnectWallet/ConnectWallet";
+import  UnlockButton from "./c./components/ConnectWalletButtontButton";
 
 
 
@@ -18,11 +18,7 @@ function App() {
   return (
 
     <AppContainer>
-      
-
-        <ConnectWallet/>
-
-
+        <UnlockButton />
       <BunnyCard />
     </AppContainer>
   );
