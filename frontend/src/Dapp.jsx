@@ -1,9 +1,7 @@
 import "./Dapp.css";
 import styled from "styled-components";
 import { BunnyCard } from "./components/bunnyCard";
-import  UnlockButton from "./c./components/ConnectWalletButtontButton";
-
-
+import { UnlockButton } from "./components/connectWalletButton";
 
 const AppContainer = styled.div`
   width: 100%;

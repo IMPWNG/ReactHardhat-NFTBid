@@ -5,8 +5,6 @@ import styled from "styled-components";
 import PancakeBunnyImg from "../../assets/images/pancake-bunny.png";
 import { BunnyDetails } from "./bunnyDetails";
 
-
-
 const CardWrapper = styled.div`
   width: 100%;
   perspective: 2000;
