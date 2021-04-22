@@ -1,6 +1,6 @@
 import "./App.css";
 import styled from "styled-components";
-import { NikeCard } from "./components/nikeCard";
+import { BunnyCard } from "./components/bunnyCard";
 
 const AppContainer = styled.div`
   width: 100%;
@@ -13,7 +13,7 @@ const AppContainer = styled.div`
 function App() {
   return (
     <AppContainer>
-      <NikeCard />
+      <BunnyCard />
     </AppContainer>
   );
 }

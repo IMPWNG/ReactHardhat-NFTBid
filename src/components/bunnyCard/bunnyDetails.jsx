@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Marginer } from "../marginer";
 
-import NikeImg from "../../assets/images/nike-logo.png";
+import BunnyPancakeImg from "../../assets/images/pancake-bunny.svg";
 
 const DetailsContainer = styled.div`
   width: 100%;
@@ -15,16 +15,19 @@ const DetailsContainer = styled.div`
 
 const MediumText = styled.span`
   font-size: 18px;
-  color: #fff;
+  color: #4ed8de;
   font-weight: 800;
   text-transform: uppercase;
+  text-shadow: 0 0 12px #4ed8de;
+
 `;
 
 const SmallText = styled.span`
   font-size: 11px;
-  color: #fff;
+  color: #4ed8de;
   font-weight: 700;
   text-transform: uppercase;
+  text-shadow: 0 0 12px #4ed8de;
 `;
 
 const SpacedHorizontalContainer = styled.div`
@@ -36,8 +39,8 @@ const SpacedHorizontalContainer = styled.div`
 
 const BuyButton = styled.button`
   padding: 10px 16px;
-  background-color: #fbbe01;
-  color: #000;
+  background-color: #ec6998;
+  color: #4ed8de;
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 700;
@@ -49,12 +52,12 @@ const BuyButton = styled.button`
 
   &:hover {
     background-color: transparent;
-    color: #fff;
-    border: 3px solid #fbbe01;
+    color: #ec6998;
+    border: 3px solid #4ed8de;
   }
 `;
 
-const NikeLogo = styled.div`
+const BunnyPancakeLogo = styled.div`
   width: 100%;
   height: 30px;
   display: flex;
@@ -63,26 +66,26 @@ const NikeLogo = styled.div`
 
   img {
     width: auto;
-    height: 13px;
+    height: 30px;
   }
 `;
 
-export function ShoesDetails(props) {
+export function BunnyDetails(props) {
   return (
     <DetailsContainer>
-      <SmallText>NIKE</SmallText>
+      <SmallText>PANCAKEBUNNY KINGDOM® PRICE</SmallText>
       <SpacedHorizontalContainer>
-        <MediumText>AIR JORDAN 1 MID SE GC</MediumText>
-        <MediumText>¥856</MediumText>
+        <MediumText>ACTUAL BID : </MediumText>
+        <MediumText>Ξ420</MediumText>
       </SpacedHorizontalContainer>
       <Marginer direction="vertical" margin="1.2em" />
       <SpacedHorizontalContainer>
-        <MediumText>YOUR NEXT SHOES</MediumText>
+        <MediumText>YOUR BID </MediumText>
         <BuyButton>BUY</BuyButton>
       </SpacedHorizontalContainer>
-      <NikeLogo>
-        <img src={NikeImg} />
-      </NikeLogo>
+      <BunnyPancakeLogo>
+        <img src={BunnyPancakeImg} />
+      </BunnyPancakeLogo>
     </DetailsContainer>
   );
 }

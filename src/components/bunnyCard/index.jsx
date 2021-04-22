@@ -2,8 +2,8 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 
-import AirJordanImg from "../../assets/images/air-jordan-transparent.png";
-import { ShoesDetails } from "./shoesDetails";
+import PancakeBunnyImg from "../../assets/images/pancake-bunny.png";
+import { BunnyDetails } from "./bunnyDetails";
 
 const CardWrapper = styled.div`
   width: 100%;
@@ -43,7 +43,7 @@ const Circle = styled.div`
   top: -4.2em;
   right: -10em;
   z-index: 5;
-  background-color: #fbbe01;
+  background-color: #ec6998;
   border-radius: 50%;
 `;
 
@@ -64,16 +64,17 @@ const BottomContainer = styled.div`
   padding: 0 1em;
 `;
 
-const NikeText = styled.h1`
-  color: #fff;
+const BunnyText = styled.h1`
+  color: #4ed8de;
   text-transform: uppercase;
   margin: 0;
   z-index: 10;
   font-size: 76px;
   font-weight: 900;
+  text-shadow: 0 0 12px #4ed8de;
 `;
 
-const ShoesWrapper = styled.div`
+const BunnyWrapper = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
@@ -82,7 +83,7 @@ const ShoesWrapper = styled.div`
   justify-content: center;
 `;
 
-const Shoes = styled(motion.div)`
+const Bunny = styled(motion.div)`
   width: auto;
   height: 190px;
   z-index: 99;
@@ -90,14 +91,19 @@ const Shoes = styled(motion.div)`
   margin-right: 3em;
   margin-top: 4em;
 
+
   img {
-    width: auto;
-    height: 100%;
+    width: 50%;
     user-select: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+
   }
 `;
 
-export function NikeCard(props) {
+export function BunnyCard(props) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useTransform(y, [-100, 100], [30, -30]);
@@ -116,20 +122,20 @@ export function NikeCard(props) {
           <CircleWrapper>
             <Circle />
           </CircleWrapper>
-          <ShoesWrapper>
-            <Shoes
-              style={{ x, y, rotateX, rotateY, rotate: "-25deg", z: 100000 }}
+          <BunnyWrapper>
+            <Bunny
+              style={{ x, y, rotateX, rotateY, z: 100000 }}
               drag
               dragElastic={0.12}
               whileTap={{ cursor: "grabbing" }}
             >
-              <img src={AirJordanImg} />
-            </Shoes>
-          </ShoesWrapper>
-          <NikeText>NIKE AIR</NikeText>
+              <img src={PancakeBunnyImg} />
+            </Bunny>
+          </BunnyWrapper>
+          <BunnyText>BUNNY</BunnyText>
         </TopContainer>
         <BottomContainer>
-          <ShoesDetails />
+          <BunnyDetails />
         </BottomContainer>
       </CardContainer>
     </CardWrapper>
