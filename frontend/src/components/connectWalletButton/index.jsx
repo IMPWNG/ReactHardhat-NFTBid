@@ -49,7 +49,7 @@ export function ConnectWallet({ connectWallet, networkError, dismiss }) {
 <AccountButton>
     <ChainName>ETH</ChainName>
             <AddressButton onClick={connectWallet}>
-                {/* Metamask network should be set to Localhost:8545. */}
+                {/* Metamask network should be set to ROPSTEN. */}
                 {networkError && (
                     <NetworkErrorMessage
                         message={networkError}
