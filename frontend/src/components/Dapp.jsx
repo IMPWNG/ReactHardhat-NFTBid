@@ -86,6 +86,7 @@ export class Dapp extends React.Component {
     return (
       <AppContainer>
       <div className="container p-4">
+
         <div className="row">
           <div className="col-12">
             <h1>
@@ -96,6 +97,7 @@ export class Dapp extends React.Component {
               <b>
                 {this.state.balance.toString()} {this.state.tokenData.symbol}
               </b>
+                <hr /> 
                 <BunnyCard />
             </p>
           </div>
@@ -105,6 +107,8 @@ export class Dapp extends React.Component {
       </div>
       </AppContainer >
     );
+
+    
   }
 
   componentWillUnmount() {
