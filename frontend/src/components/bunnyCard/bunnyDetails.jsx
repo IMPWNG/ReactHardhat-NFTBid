@@ -74,6 +74,8 @@ export function BunnyDetails(props) {
   return (
     <DetailsContainer>
       <SmallText>PANCAKEBUNNY KINGDOM® PRICE</SmallText>
+      <SmallText>PANCAKEBUNNY KINGDOM® PRICE</SmallText>
+      <SmallText>PANCAKEBUNNY KINGDOM® PRICE</SmallText>
       <SpacedHorizontalContainer>
         <MediumText>ACTUAL BID : </MediumText>
         <MediumText>Ξ420</MediumText>

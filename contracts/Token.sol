@@ -1,5 +1,7 @@
 // Solidity files have to start with this pragma.
 // It will be used by the Solidity compiler to validate its version.
+
+//SPDX-License-Identifier: <SPDX-License>
 pragma solidity ^0.7.0;
 
 import "hardhat/console.sol";
