@@ -13,5 +13,9 @@
         "ethers": "^5.1.4",
         "hardhat": "^2.2.1",
         "husky": "^6.0.0"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "coingecko-api": "^1.0.10"
     }
 }

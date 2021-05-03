@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { Header } from './components/header';
 import { Dapp }from './components/Dapp';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Dapp />
+    <Header />
+      <Dapp />
+
   </React.StrictMode>,
   document.getElementById('root')
 );

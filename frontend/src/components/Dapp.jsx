@@ -8,9 +8,7 @@ import { ethers } from "ethers";
 import TokenArtifact from "../contracts/Token.json";
 import contractAddress from "../contracts/contract-address.json";
 
-import $ from 'jquery';
 
-import { BunnyPriceInfo } from "./bunnyPriceInfo";
 import { NoWalletDetected } from "./noWalletDetected";
 import { ConnectWallet } from "./connectWalletButton";
 import { Loading } from "./loading";
@@ -25,18 +23,6 @@ import styled from "styled-components";
 // Here's a list of network ids https://docs.metamask.io/guide/ethereum-provider.html#properties
 // to use when deploying to other networks.
 const HARDHAT_NETWORK_ID = '3';
-
-const HeaderBunnyPrice = styled.div`
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 24px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-`;
 
 const LoginContainer = styled.div`
   width: 100%;
@@ -71,19 +57,19 @@ export class Dapp extends React.Component {
       txBeingSent: undefined,
       transactionError: undefined,
       networkError: undefined,
-      price: 0.00,
-      lastFetch: ""
     };
 
     this.state = this.initialState;
   }
 
   render() {
+    
     // Ethereum wallets inject the window.ethereum object. If it hasn't been
     // injected, we instruct the user to install MetaMask.
 
     if (window.ethereum === undefined) {
       return <LoginContainer>
+        
                 <NoWalletDetected />;
              </LoginContainer>
     }
@@ -97,24 +83,16 @@ export class Dapp extends React.Component {
     // clicks a button. This callback just calls the _connectWallet method.
     if (!this.state.selectedAddress) {
       return (
-        <HeaderBunnyPrice>
+        
           <LoginContainer >
+          
             <ConnectWallet
               connectWallet={() => this._connectWallet()}
               networkError={this.state.networkError}
               dismiss={() => this._dismissNetworkError()}
             />
-            <BunnyPriceInfo> <div>
-              <h1>
-                BTC Price: {this.state.price}
-                <small>
-                  {this.state.lastFetch}
-                </small>
-              </h1>
-            </div>
-            </BunnyPriceInfo>
             </LoginContainer >
-          </HeaderBunnyPrice>
+          
       );
     }
     // If the token data or the user's balance hasn't loaded yet, we show
@@ -154,24 +132,7 @@ export class Dapp extends React.Component {
     // We poll the user's balance, so we have to stop doing that when Dapp
     // gets unmounted
     this._stopPollingData();
-    this.fetch();
-  }
-  fetch() {
-    var context = this;
-
-    window.setTimeout(function () {
-      $.ajax({
-        url: "https://api.coindesk.com/v1/bpi/currentprice.json",
-        dataType: "json",
-        method: "GET",
-        success: function (response) {
-          context.setState({
-            price: response.bpi.USD.rate,
-            lastFetch: response.time.updated
-          });
-        }
-      });
-    }, 3000);
+    
   }
 
   async _connectWallet() {
